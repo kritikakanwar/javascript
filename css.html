@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* .box1{
+            color: whitesmoke;
+            width: 300px;
+            height: 300px;
+            background-color: blueviolet;
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            z-index: 5;
+            text-align: center;
+            box-shadow: 3px 3px 3px 1px silver;
+            border-radius: 10px;
+            background: linear-gradient(60deg,blueviolet,cyan,pink);
+        }
+        .box2
+        {
+            color: whitesmoke;
+            width: 300px;
+            height: 300px;
+            background-color: palevioletred;
+            position: absolute;
+            top: 40px;
+            left: 40px;
+            z-index: 2;
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: 3px 3px 3px 1px silver;
+        }
+        .box3
+        {
+            color: whitesmoke;
+            width: 300px;
+            height: 300px;
+            background-color: olivedrab;
+            position: absolute;
+            top: 70px;
+            left: 70px;
+            z-index: 1;
+            text-align: center;
+            box-shadow: 2px 2px 2px 1px rgb(146, 146, 146);
+            border-radius: 10px;
+        } */
+        .box4
+        {
+            color: whitesmoke;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background-color: olivedrab;
+            position: absolute;
+            top: 400px;
+            left: 400px;
+            z-index: 1;
+            animation: changecolor 1.5s infinite;
+        }
+        @keyframes changecolor {
+            0%
+            {
+                background-color: olivedrab;
+                top: 0px;
+            }
+
+            20%
+            {
+                background-color:orchid;
+                
+            }
+            40%
+            {
+                background-color:purple;
+                top: 580px;
+                left:600px
+            }
+            60%
+            {
+                background-color: cyan;
+                bottom: 0;
+               /* left:700px; */
+            }
+
+            80%
+            {
+                background-color: red;
+                bottom: 580px;
+                /* left:800px */
+            }
+            100%
+            {
+                background-color: lightgreen;
+                top:0px;
+                left:950px;
+            }
+        }
+        .grid-container
+{
+    display: grid;
+    background-color: aqua;
+    grid-template-columns: auto auto auto;
+    width: 400px;
+    height: 400px; 
+    margin-left: auto;
+    margin-right: auto;
+}
+.grid-item
+{
+
+margin: 10px;
+padding: 2px;
+width : 100px;
+height : 100px;
+
+}
+button 
+{
+font-size: 10px;
+width : 100px;
+height : 100px;
+background-color: orangered;  
+}
+
+
+
+    </style>
+
+
+
+</head>
+<body>
+    <!-- <div>
+        <div class="box1">Box1</div>
+        <div class="box2">Box2</div>
+        <div class="box3">Box3</div>
+    
+    </div> -->
+    <!-- <div class="box4"></div> -->
+<h1 style="text-align: center;">Let's Play!</h1>
+    <div class="grid-container">
+<div class="grid-item">
+    <button onclick="changesymbol(1)" id="1"></button>
+</div>
+<div class="grid-item">
+    <button onclick="changesymbol(2)" id="2"></button>
+</div>
+<div class="grid-item">
+    <button onclick="changesymbol(3)" id="3"></button>
+</div>
+<div class="grid-item">
+    <button onclick="changesymbol(4)" id="4"></button>
+</div>
+<div class="grid-item">
+    <button onclick="changesymbol(5)" id="5"></button>
+</div>
+<div class="grid-item">
+    <button onclick="changesymbol(6)" id="6"></button>
+</div>
+<div class="grid-item">
+    <button onclick="changesymbol(7)" id="7"></button>
+</div>
+<div class="grid-item">
+    <button onclick="changesymbol(8)" id="8"></button>
+</div>
+<div class="grid-item">
+    <button onclick="changesymbol(9)" id="9" ></button>
+</div>
+    </div>
+    <script>
+        var symbol= "X";
+        function imagechange()
+        {
+             document.getElementById("demo").src = "/Users/kritikakanwar/Downloads/career-in-technology-feature.jpeg";
+    
+            document.getElementById("demo").style.transform = "rotate(360deg)";
+            document.getElementById("demo").style.transition="all 2s"; 
+        }
+    
+        function changesymbol(a)
+        {   document.getElementById(a).style.fontSize="50px";
+            document.getElementById(a).style.transform = "translate(2.5)";
+            document.getElementById(a).style.transition="all 1s"; 
+            document.getElementById(a).innerHTML = symbol;   
+            if(symbol=="X")
+            {
+                symbol ="O";
+            }
+            else{
+                document.getElementById(a).style.transform = "rotate(360deg)";
+            document.getElementById(a).style.transition="all 1s"; 
+                symbol="X";
+            }
+            winnercondition();
+        }
+    
+        function winnercondition()
+        {
+            if(document.getElementById(1).innerHTML == "X" &  document.getElementById(2).innerHTML=="X" &  document.getElementById(3).innerHTML=="X" | document.getElementById(4).innerHTML == "X" &  document.getElementById(5).innerHTML=="X" &  document.getElementById(6).innerHTML=="X" | document.getElementById(6).innerHTML == "X" &  document.getElementById(7).innerHTML=="X" &  document.getElementById(8).innerHTML=="X" | document.getElementById(1).innerHTML == "O" &  document.getElementById(2).innerHTML=="O" &  document.getElementById(3).innerHTML=="O")
+            {
+               if(symbol =="X")
+               {
+                alert("Player 2 is winner !");
+               }
+               else{
+                alert("Player 1 is winner !");
+               }
+            }
+        }
+    </script>
+    <!-- <img id="demo" src="/Users/kritikakanwar/Downloads/instagram.png" width="300px" height="300px" style="border-radius: 50%;">
+    <button name="changeimage" onclick="imagechange()">Change Image</button> -->
+    </body>
+
+</html>
